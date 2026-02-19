@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ПУТЬ KHAN | Лид-магниты</title>
+    <title>ПУТЬ KHAN | Аудио-Разборы</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
@@ -12,6 +12,7 @@
             --bg-color: #0a0a0a;
             --card-bg: #141414;
             --accent-color: #ffffff;
+            --premium-color: #C5A059; /* Золотистый акцент для личного разбора */
             --text-main: #ffffff;
             --text-muted: #888888;
             --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -62,7 +63,7 @@
         .container {
             display: flex;
             gap: 20px;
-            max-width: 1200px;
+            max-width: 1400px; /* Немного расширил для 4 карточек */
             width: 100%;
             flex-wrap: wrap;
             justify-content: center;
@@ -75,7 +76,7 @@
             border-radius: 24px;
             flex: 1;
             min-width: 320px;
-            max-width: 380px;
+            max-width: 340px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -91,6 +92,11 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
 
+        .card.premium {
+            border-color: var(--premium-color);
+            background: linear-gradient(145deg, #141414 0%, #1a1a1a 100%);
+        }
+
         .card h2 {
             font-size: 1.6rem;
             font-weight: 700;
@@ -100,7 +106,7 @@
 
         .card p {
             color: var(--text-muted);
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             font-weight: 300;
             font-size: 0.95rem;
         }
@@ -125,6 +131,11 @@
             background: #e0e0e0;
         }
 
+        .btn.premium-btn {
+            background: var(--premium-color);
+            color: #000;
+        }
+
         .tag {
             font-size: 0.7rem;
             color: var(--text-muted);
@@ -132,6 +143,18 @@
             letter-spacing: 0.2em;
             margin-bottom: 10px;
             display: block;
+        }
+
+        .tag.premium-tag {
+            color: var(--premium-color);
+        }
+
+        .price {
+            font-weight: 900;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            display: block;
+            color: var(--text-main);
         }
 
         footer {
@@ -171,6 +194,7 @@
     </header>
 
     <div class="container">
+        <!-- КАРТОЧКА 1 -->
         <div class="card">
             <div>
                 <span class="tag">Границы & Статус</span>
@@ -180,6 +204,7 @@
             <a href="https://t.me/Khanaudio3bot" class="btn">Забрать разбор</a>
         </div>
 
+        <!-- КАРТОЧКА 2 -->
         <div class="card">
             <div>
                 <span class="tag">Отношения & Психология</span>
@@ -189,6 +214,7 @@
             <a href="https://t.me/ignor_razbor_bot" class="btn">Слушать сейчас</a>
         </div>
 
+        <!-- КАРТОЧКА 3 -->
         <div class="card">
             <div>
                 <span class="tag">Дисциплина & Рост</span>
@@ -196,6 +222,17 @@
                 <p>Разбор о нереализованности и предательстве своих целей. Хватит жить ниже своего уровня. Твой путь к деньгам и силе начинается здесь.</p>
             </div>
             <a href="https://t.me/KhanAudioBot" class="btn">Получить доступ</a>
+        </div>
+
+        <!-- НОВАЯ КАРТОЧКА: ЛИЧНЫЙ РАЗБОР -->
+        <div class="card premium">
+            <div>
+                <span class="tag premium-tag">ЛИЧНАЯ ДИАГНОСТИКА</span>
+                <h2>Денежный и<br>карьерный блок</h2>
+                <p>Персональное 15-минутное аудио. Поиск твоей системной ошибки и пошаговый алгоритм действий. Это не консультация, а хирургия твоего застоя.</p>
+                <span class="price">10 000 ₽</span>
+            </div>
+            <a href="https://t.me/khannofilter" class="btn premium-btn">Написать KHAN</a>
         </div>
     </div>
 
