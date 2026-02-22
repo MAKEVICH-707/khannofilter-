@@ -12,7 +12,7 @@
             --bg-color: #0a0a0a;
             --card-bg: #141414;
             --accent-color: #ffffff;
-            --premium-color: #C5A059; /* Золотистый акцент для личного разбора */
+            --premium-color: #C5A059; /* Золото KHAN для премиум блока */
             --text-main: #ffffff;
             --text-muted: #888888;
             --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -35,7 +35,7 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
 
         header {
@@ -63,7 +63,7 @@
         .container {
             display: flex;
             gap: 20px;
-            max-width: 1400px; /* Немного расширил для 4 карточек */
+            max-width: 1400px;
             width: 100%;
             flex-wrap: wrap;
             justify-content: center;
@@ -74,8 +74,8 @@
             border: 1px solid #222;
             padding: 40px;
             border-radius: 24px;
-            flex: 1;
-            min-width: 320px;
+            flex: 1 1 calc(33.333% - 20px);
+            min-width: 300px;
             max-width: 340px;
             display: flex;
             flex-direction: column;
@@ -86,19 +86,26 @@
             animation: slideUp 1s ease-out;
         }
 
+        /* Премиум карточка (Личный разбор) */
+        .card.premium {
+            border: 1px solid var(--premium-color);
+            background: linear-gradient(145deg, #141414 0%, #1a1a10 100%);
+            box-shadow: 0 0 20px rgba(197, 160, 89, 0.1);
+        }
+
         .card:hover {
             border-color: #444;
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
 
-        .card.premium {
+        .card.premium:hover {
             border-color: var(--premium-color);
-            background: linear-gradient(145deg, #141414 0%, #1a1a1a 100%);
+            box-shadow: 0 20px 50px rgba(197, 160, 89, 0.2);
         }
 
         .card h2 {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 20px;
             line-height: 1.2;
@@ -116,7 +123,7 @@
             background: var(--accent-color);
             color: #000;
             text-decoration: none;
-            padding: 18px 30px;
+            padding: 16px 30px;
             border-radius: 100px;
             font-weight: 700;
             text-align: center;
@@ -124,16 +131,12 @@
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            width: 100%;
         }
 
         .btn:hover {
             transform: scale(1.05);
             background: #e0e0e0;
-        }
-
-        .btn.premium-btn {
-            background: var(--premium-color);
-            color: #000;
         }
 
         .tag {
@@ -145,16 +148,26 @@
             display: block;
         }
 
-        .tag.premium-tag {
-            color: var(--premium-color);
+        .price {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            display: block;
         }
 
-        .price {
-            font-weight: 900;
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            display: block;
-            color: var(--text-main);
+        .premium-tag {
+            color: var(--premium-color);
+            font-weight: 700;
+        }
+
+        .btn.premium-btn {
+            background: var(--premium-color);
+            color: #000;
+        }
+
+        .btn.premium-btn:hover {
+            background: #d4b06a;
         }
 
         footer {
@@ -194,7 +207,7 @@
     </header>
 
     <div class="container">
-        <!-- КАРТОЧКА 1 -->
+        <!-- Карточка 1 -->
         <div class="card">
             <div>
                 <span class="tag">Границы & Статус</span>
@@ -204,7 +217,7 @@
             <a href="https://t.me/Khanaudio3bot" class="btn">Забрать разбор</a>
         </div>
 
-        <!-- КАРТОЧКА 2 -->
+        <!-- Карточка 2 -->
         <div class="card">
             <div>
                 <span class="tag">Отношения & Психология</span>
@@ -214,7 +227,7 @@
             <a href="https://t.me/ignor_razbor_bot" class="btn">Слушать сейчас</a>
         </div>
 
-        <!-- КАРТОЧКА 3 -->
+        <!-- Карточка 3 -->
         <div class="card">
             <div>
                 <span class="tag">Дисциплина & Рост</span>
@@ -224,12 +237,33 @@
             <a href="https://t.me/KhanAudioBot" class="btn">Получить доступ</a>
         </div>
 
-        <!-- НОВАЯ КАРТОЧКА: ЛИЧНЫЙ РАЗБОР -->
+        <!-- НОВАЯ КАРТОЧКА 4: Речевые приемы -->
+        <div class="card">
+            <div>
+                <span class="tag">Влияние & Защита</span>
+                <h2>Иллюзия удобности:<br>3 речевых приема</h2>
+                <p>Как выбить почву из-под ног у тех, кто привык тобой пользоваться. Конкретные фразы против давления по срокам, обесценивания твоей работы и эмоций.</p>
+            </div>
+            <!-- ВНИМАНИЕ: ЗДЕСЬ ВСТАВЬ РЕАЛЬНУЮ ССЫЛКУ НА БОТА -->
+            <a href="https://t.me/ТВОЯ_ССЫЛКА_НА_БОТА" class="btn">Слушать разбор</a>
+        </div>
+
+        <!-- КАРТОЧКА 5: ПУТЬ KHAN (ТЕПЕРЬ СТАНДАРТНАЯ ФОРМА) -->
+        <div class="card premium">
+            <div>
+                <span class="tag premium-tag">ЗАКРЫТЫЙ КАНАЛ</span>
+                <h2>ПУТЬ KHAN</h2>
+                <p>Твоя личная база данных по социальной защите. Ежедневные разборы, ломающие чужие манипуляции. Перестань быть ресурсом для других — забери пульт управления.</p>
+            </div>
+            <a href="https://web.tribute.tg/s/ExW" class="btn premium-btn">Получить доступ</a>
+        </div>
+
+        <!-- КАРТОЧКА 6: ЛИЧНЫЙ РАЗБОР -->
         <div class="card premium">
             <div>
                 <span class="tag premium-tag">ЛИЧНАЯ ДИАГНОСТИКА</span>
-                <h2>Денежный и<br>карьерный блок</h2>
-                <p>Персональное 15-минутное аудио. Поиск твоей системной ошибки и пошаговый алгоритм действий. Это не консультация, а хирургия твоего застоя.</p>
+                <h2>Личный аудиоразбор<br>твоей ситуации</h2>
+                <p>Разбор один на один. Я записываю личное 15-минутное аудио, где вскрываю системную ошибку, из-за которой ты теряешь статус, пробиваешь финансовый потолок или сливаешь границы. Точный диагноз + жесткий алгоритм действий на 48 часов.</p>
                 <span class="price">10 000 ₽</span>
             </div>
             <a href="https://t.me/khannofilter" class="btn premium-btn">Написать KHAN</a>
